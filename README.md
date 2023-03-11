@@ -21,12 +21,14 @@
 - 自動テストの設計、構築
 - 大規模なリポジトリにおける効率的なGit運用
 - GCPを活用した開発
+- AWSを活用した開発
 
 ---
 
 ## 技術スタック
 - CircleCI, Github Actions, Bitrise, Jenkins, Cloud Build
-- GCP（特にGCE、GCS、GKE、BigQuery、DataPortal）
+- GCP（特にGCE、GCS、GKE、BigQuery、Looker Studio）
+- AWS（特にECS）
 - Git
 - Terraform
 - Ansible
@@ -41,15 +43,16 @@
 ### 株式会社ディー・エヌ・エー
 
 #### 社内向けCI/CD基盤の運用（2021/04 - 現在）
-CIのSaaSであるCircleCIのエンタープライズ向けであるCircleCI Serverの構築・運用メンバーとして参加。社内のエンジニアが利用しやすいCI/CD環境を提供している。
+CIのSaaSであるCircleCIのエンタープライズ向けであるCircleCI Server、GitHub Actionsのセルフホストランナー基盤の構築・運用メンバーとして参加。社内のエンジニアが利用しやすいCI/CD環境を提供している。
 
 - 役割
   - 社内向けCI/CD基盤サポートチームのメンバー（メンバー2名）
 - 担当業務
   - AWS上に構築されるCircleCI Serverの運用
-  - Terraformを利用したEC2やEKSなどのインフラ構築
-  - TypeScriptによるオートスケーリングやユーザー管理などの各種運用スクリプトを作成
-  - CircleCIの効率的な利用方法の社内サポート、ドキュメント作成
+    - Terraformを利用したEC2やEKSなどのインフラ構築
+    - TypeScriptによるオートスケーリングやユーザー管理などの各種運用スクリプトを作成
+    - CircleCIの効率的な利用方法の社内サポート、ドキュメント作成
+  - GitHub Actionsセルフホストランナー基盤の設計
 
 #### 大規模なモバイルゲーム開発におけるCI/CD基盤の設計・開発（2019/04 - 現在）
 Unityを使用したモバイルゲーム開発におけるCI/CDの基盤となるJenkinsクラスタをクラウド上に構築。大規模開発でありながら安定したビルド環境を実現し、また2021年のコロナ禍やオフィス移転に際してもクラウドの利点を生かして業務への影響を最小限に留めた。
@@ -63,16 +66,17 @@ Unityを使用したモバイルゲーム開発におけるCI/CDの基盤とな�
   - Unityゲームのビルドパイプラインの構築
   - 大規模リポジトリにおけるGit, Git LFSの効率的な使い方の調査・啓蒙活動
 - 対外活動
-  - [モバイルゲーム開発におけるJenkinsクラウド時代のJenkins構築と管理テクニック　CEDEC2020](https://speakerdeck.com/dena_tech/mohairukemukai-fa-niokerujenkinskurautoshi-dai-falsejenkinsgou-zhu-toguan-li-tekunituku)
-  - [大きなGitリポジトリをクローンするときの工夫を図解します](https://swet.dena.com/entry/2021/07/12/120000)（同チームメンバーによる記事。自身はレビューを担当）
+  - [ゲーム開発のJenkins整備から横断SREチームが誕生するまで DeNA TechCon 2023](https://techcon2023.dena.dev/session/session4/)
+  - [モバイルゲーム開発におけるJenkinsクラウド時代のJenkins構築と管理テクニック CEDEC2020](https://speakerdeck.com/dena_tech/mohairukemukai-fa-niokerujenkinskurautoshi-dai-falsejenkinsgou-zhu-toguan-li-tekunituku)
+  - [大規模リポジトリで高速にgit cloneするテクニック](https://swet.dena.com/entry/2020/12/10/100000)
 
 #### QAチーム業務支援のツール調査・システム開発（2017/10 - 2019/03）
-ゲーム開発の傍らでテストやJenkinsによる自動化に興味を持っていたためSWET(Software Engineer in Test）グループに社内異動。
+ゲーム開発の傍らでテストやJenkinsによる自動化に興味を持っていたためSWET（Software Engineer in Test）グループに社内異動。
 
 SeleniumやAppiumといったWeb/モバイルのE2Eテスト技術の調査、QAチーム用のバグチケット分析基盤の構築、ストア提出後のアプリがリジェクトされる可能性を機械的に検出するツールを開発。
 
 - 役割
-  - QAサポートチームのリーダー(メンバー3名）
+  - QAサポートチームのリーダー（メンバー3名）
 - 担当業務
   - QA現場へのヒアリングと内製ツールの仕様策定
   - ストア提出後のiOS/Androidアプリがリジェクトされる可能性を機械的に検出するツールをRubyで開発
@@ -99,9 +103,10 @@ SeleniumやAppiumといったWeb/モバイルのE2Eテスト技術の調査、QA
 |[CIAnalyzer](https://github.com/Kesin11/CIAnalyzer)|![GitHub Repo stars](https://img.shields.io/github/stars/Kesin11/CIAnalyzer?style=social)|![GitHub forks](https://img.shields.io/github/forks/Kesin11/CIAnalyzer?style=social)|
 |[danger-textlint](https://github.com/Kesin11/danger-textlint)|![GitHub Repo stars](https://img.shields.io/github/stars/Kesin11/danger-textlint?style=social)|![GitHub forks](https://img.shields.io/github/forks/Kesin11/danger-textlint?style=social)|
 |[ts-junit2json](https://github.com/Kesin11/ts-junit2json)|![GitHub Repo stars](https://img.shields.io/github/stars/Kesin11/ts-junit2json?style=social)|![GitHub forks](https://img.shields.io/github/forks/Kesin11/ts-junit2json?style=social)|
-|[Firestore-simple(Archived)](https://github.com/Kesin11/Firestore-simple)|![GitHub Repo stars](https://img.shields.io/github/stars/Kesin11/Firestore-simple?style=social)|![GitHub forks](https://img.shields.io/github/forks/Kesin11/Firestore-simple?style=social)|
+|[Firestore-simple(Archived)](https://github.com/Kesin11/Firestore-simple)|![GitHub Repo stars](https://img.shields.io/github/stars/Kesin10/Firestore-simple?style=social)|![GitHub forks](https://img.shields.io/github/forks/Kesin11/Firestore-simple?style=social)|
 
 ### 技術記事
+- [GitHub Actions関連機能とGHESリリースノートの対応表](https://zenn.dev/kesin11/articles/gha_releasenote_ghes)
 - [GitHub Actionsの手動実行パラメータのUI改善について速報で解説する](https://zenn.dev/kesin11/articles/13ca0f40e1eaa0)
 - [CI/CDのデータを収集するCIAnalyzerの紹介](https://zenn.dev/kesin11/articles/cf08579949b8b0)
 - [Bazelの解説（TS, Dockerイメージ、リモートキャッシュ）](https://zenn.dev/kesin11/books/c86010deb5b8008f394f)
@@ -109,6 +114,7 @@ SeleniumやAppiumといったWeb/モバイルのE2Eテスト技術の調査、QA
 - [Firebase Emulator Suiteをフル活用してTDDで開発しよう](https://qiita.com/Kesin11/items/43bbc06524aa31c1fd2c)
 
 ### 勉強会登壇
+- [CircleCIでLayer Cachingを使わずにdocker buildを高速化する](https://speakerdeck.com/kesin11/circlecidelayer-cachingwoshi-wazunidocker-buildwogao-su-hua-suru)
 - [CI/CDのボトルネックを把握できていますか？BigQueryでビルド情報ダッシュボードを構築した話 CI/CD Conference 2021](https://speakerdeck.com/kesin11/cdfalsebotorunetukuwoba-wo-dekiteimasuka-bigquerydebirudoqing-bao-datusiyubodowogou-zhu-sitahua)
 - [TypeScriptから使いやすいFirestore-simpleを紹介します(2020年版) Firebase Realtime Meetup](https://speakerdeck.com/kesin11/typescriptkarashi-iyasuifirestore-simplewoshao-jie-simasu-2020nian-ban)
 - [GitHub Actionsが他のCIサービスと比較してできることできないこと GitHub Actions Meetup Tokyo β](https://speakerdeck.com/kesin11/github-actionsgata-falsecisabisutobi-jiao-sitedekirukotodekinaikoto)
